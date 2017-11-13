@@ -593,11 +593,9 @@
 <p> 1). 涉及内存分配和释放的函数要成对出现。(malloc/free、new/delete成对出现)</p>
 <p> 2). 尽量在一个模块内部实现或者相关联的模块内实现内存的成对分配和释放，如在一个类的构造函数中创建对象分配内存，则在该类的虚函数中释放该对象的内存空间。</p>
 </li>
-<li><p>boost中的智能指针。</p>
-<p> 利用指针的引用计数，来管理内存的分配和释放问题。</p>
+<li><p>boost中的智能指针。利用指针的引用计数，来管理内存的分配和释放问题。</p>
 </li>
-<li><p>重载new和delete。</p>
-<p> 其主要思路是将分配的内存以链表的形式自行管理，使用完毕之后从链表中删除，程序结束时可检查改链表，其中记录了内存泄露的文件，所在文件的行数以及泄露的大小。<br><a href="http://blog.csdn.net/na_he/article/details/7429171" target="_blank" rel="external">http://blog.csdn.net/na_he/article/details/7429171</a></p>
+<li><p>重载new和delete。其主要思路是将分配的内存以链表的形式自行管理，使用完毕之后从链表中删除，程序结束时可检查修改链表，其中记录了内存泄露的文件，所在文件的行数以及泄露的大小。<br><a href="http://blog.csdn.net/na_he/article/details/7429171" target="_blank" rel="external">http://blog.csdn.net/na_he/article/details/7429171</a></p>
 </li>
 <li><p>其他一些常见的工具插件：<a href="http://blog.csdn.net/na_he/article/details/7431367" target="_blank" rel="external">http://blog.csdn.net/na_he/article/details/7431367</a></p>
 </li>

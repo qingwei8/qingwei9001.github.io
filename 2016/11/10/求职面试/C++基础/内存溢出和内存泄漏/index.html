@@ -97,7 +97,7 @@
 <meta property="og:description" content="1. 内存泄漏与内存溢出
 内存溢出（out of memory）：是指程序在申请内存空间时，没有足够的内存空间供其使用，出现out of memory；即为内存溢出。内存溢出是指要求分配的内存超出了系统能给的大小，系统不能满足需求，于是产生溢出。
 内存泄露（memory leak）：指程序中己动态分配的堆内存由于某种原因程序未释放或无法释放，造成系统内存的浪费，导致程序运行速度减慢甚至系统崩溃等严">
-<meta property="og:updated_time" content="2017-11-13T13:34:46.817Z">
+<meta property="og:updated_time" content="2017-11-13T13:40:45.092Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="内存溢出、内存泄漏及解决办法">
 <meta name="twitter:description" content="1. 内存泄漏与内存溢出
@@ -410,11 +410,9 @@
 <p> 1). 涉及内存分配和释放的函数要成对出现。(malloc/free、new/delete成对出现)</p>
 <p> 2). 尽量在一个模块内部实现或者相关联的模块内实现内存的成对分配和释放，如在一个类的构造函数中创建对象分配内存，则在该类的虚函数中释放该对象的内存空间。</p>
 </li>
-<li><p>boost中的智能指针。</p>
-<p> 利用指针的引用计数，来管理内存的分配和释放问题。</p>
+<li><p>boost中的智能指针。利用指针的引用计数，来管理内存的分配和释放问题。</p>
 </li>
-<li><p>重载new和delete。</p>
-<p> 其主要思路是将分配的内存以链表的形式自行管理，使用完毕之后从链表中删除，程序结束时可检查改链表，其中记录了内存泄露的文件，所在文件的行数以及泄露的大小。<br><a href="http://blog.csdn.net/na_he/article/details/7429171" target="_blank" rel="external">http://blog.csdn.net/na_he/article/details/7429171</a></p>
+<li><p>重载new和delete。其主要思路是将分配的内存以链表的形式自行管理，使用完毕之后从链表中删除，程序结束时可检查修改链表，其中记录了内存泄露的文件，所在文件的行数以及泄露的大小。<br><a href="http://blog.csdn.net/na_he/article/details/7429171" target="_blank" rel="external">http://blog.csdn.net/na_he/article/details/7429171</a></p>
 </li>
 <li><p>其他一些常见的工具插件：<a href="http://blog.csdn.net/na_he/article/details/7431367" target="_blank" rel="external">http://blog.csdn.net/na_he/article/details/7431367</a></p>
 </li>
