@@ -99,7 +99,7 @@ static是静态变量的类型说明符。静态变量属于静态存储方式�
 static是静态变量的类型说明符。静态变量属于静态存储方式，但是属于静态存储方式的量不一定就是静态变量。 例如外部变量虽属于静态存储方式，但不一定是静态变量，必须由static加以定义后才能成为静态外部变量，或称静态全局变量。
 2. 关键字static的作用
 1).在函数体内：声明为静态的变量在这一函数被调用的过程中维持其值不变，即静态变量的生存周期会延长，为整个程序的生">
-<meta property="og:updated_time" content="2017-11-13T15:32:14.196Z">
+<meta property="og:updated_time" content="2017-11-13T15:36:43.135Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="static总结">
 <meta name="twitter:description" content="1. static变量
@@ -404,12 +404,14 @@ static是静态变量的类型说明符。静态变量属于静态存储方式�
 <p>联系：static全局变量与普通全局变量都是是静态存储方式。</p>
 <p>区别：</p>
 <p>1).static全局变量与全局变量的作用域不同：</p>
-<pre><code>a).非静态全局变量的作用域为整个源程序，当一个源程序由多个源文件组成时，非静态的全局变量会在每个源文件中都有一份拷贝；
-
-b).static全局变量限制了其作用域，即只在定义该变量的源文件中可用，在其他文件中不可使用，同时static全局变量只初始化一次。即static使数据本地化。
+<pre><code>a).非静态全局变量的作用域为整个源程序，当一个源程序由多个源文件组成时，非静态的全局
+变量会在每个源文件中都有一份拷贝；    
+b).static全局变量限制了其作用域，即只在定义该变量的源文件中可用，在其他文件中不可
+使用，同时static全局变量只初始化一次。即static使数据本地化。
 </code></pre><p>2).static局部变量与普通局部变量的生存周期不同，存储方式不同：</p>
 <pre><code>a).static局部变量在静态存储去；局部变量在栈中。
-b).static局部变量的生存周期会变长，即在定义时只初始化一次，在程序结束时才被释放，下一次运算依据上一次的结果值进行。
+b).static局部变量的生存周期会变长，即在定义时只初始化一次，在程序结束时才被释放，
+下一次运算依据上一次的结果值进行。
 c).局部变量会随函数的调用而多次初始化及多次释放；每次一次的初始化与释放与上次无关。
 </code></pre><p>3).static函数与普通函数作用域不同：</p>
 <pre><code>a).static函数的作用域仅在定义它的文件内可使用，外部文件不可使用。static函数在内存中只有一份。
@@ -461,8 +463,8 @@ b).普通函数可在源程序的任何地方被使用，普通函数在每个�
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/11/10/求职面试/C++基础/函数调用原理与栈堆/" rel="next" title="函数调用原理与栈、堆">
-                <i class="fa fa-chevron-left"></i> 函数调用原理与栈、堆
+              <a href="/2016/11/10/求职面试/C++基础/内存溢出和内存泄漏/" rel="next" title="内存溢出、内存泄漏及解决办法">
+                <i class="fa fa-chevron-left"></i> 内存溢出、内存泄漏及解决办法
               </a>
             
           </div>
@@ -471,8 +473,8 @@ b).普通函数可在源程序的任何地方被使用，普通函数在每个�
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/11/10/求职面试/C++基础/内存分配及堆和栈的区别/" rel="prev" title="堆和栈的区别">
-                堆和栈的区别 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/11/10/求职面试/C++基础/函数调用原理与栈堆/" rel="prev" title="函数调用原理与栈、堆">
+                函数调用原理与栈、堆 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
