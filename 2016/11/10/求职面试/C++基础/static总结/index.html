@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="求职面试," />
+  <meta name="keywords" content="求职面试,C++," />
 
 
 
@@ -87,25 +87,25 @@
 
 
 
-<meta name="description" content="爱奇艺面试总结.2017
-
-##计算机网络##基础部分
-TCP报头格式UDP报头格式TCP/UDP区别（不仅是宏观上的，最好能根据各自的机制讲解清楚）HTTP状态码（最好结合使用场景，比如在缓存命中时使用哪个）HTTP协议（一些报头字段的作用，如cace-control、keep-alive）OSI协议、TCP/IP协议以及每层对应的协议。SESSION机制、cookie机制TCP三次握手、四次挥">
+<meta name="description" content="1. static变量
+static是静态变量的类型说明符。静态变量属于静态存储方式，但是属于静态存储方式的量不一定就是静态变量。 例如外部变量虽属于静态存储方式，但不一定是静态变量，必须由static加以定义后才能成为静态外部变量，或称静态全局变量。
+2. 关键字static的作用
+1).在函数体内：声明为静态的变量在这一函数被调用的过程中维持其值不变，即静态变量的生存周期会延长，为整个程序的生">
 <meta property="og:type" content="article">
-<meta property="og:title" content="后端开发面试总结-网络">
-<meta property="og:url" content="https://qingwei9001.github.io/2017/11/10/求职面试/求职面试-网络/index.html">
+<meta property="og:title" content="static总结">
+<meta property="og:url" content="https://qingwei9001.github.io/2016/11/10/求职面试/C++基础/static总结/index.html">
 <meta property="og:site_name" content="qingwei's personal blog">
-<meta property="og:description" content="爱奇艺面试总结.2017
-
-##计算机网络##基础部分
-TCP报头格式UDP报头格式TCP/UDP区别（不仅是宏观上的，最好能根据各自的机制讲解清楚）HTTP状态码（最好结合使用场景，比如在缓存命中时使用哪个）HTTP协议（一些报头字段的作用，如cace-control、keep-alive）OSI协议、TCP/IP协议以及每层对应的协议。SESSION机制、cookie机制TCP三次握手、四次挥">
-<meta property="og:updated_time" content="2017-11-13T10:47:14.549Z">
+<meta property="og:description" content="1. static变量
+static是静态变量的类型说明符。静态变量属于静态存储方式，但是属于静态存储方式的量不一定就是静态变量。 例如外部变量虽属于静态存储方式，但不一定是静态变量，必须由static加以定义后才能成为静态外部变量，或称静态全局变量。
+2. 关键字static的作用
+1).在函数体内：声明为静态的变量在这一函数被调用的过程中维持其值不变，即静态变量的生存周期会延长，为整个程序的生">
+<meta property="og:updated_time" content="2017-11-13T15:12:23.735Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="后端开发面试总结-网络">
-<meta name="twitter:description" content="爱奇艺面试总结.2017
-
-##计算机网络##基础部分
-TCP报头格式UDP报头格式TCP/UDP区别（不仅是宏观上的，最好能根据各自的机制讲解清楚）HTTP状态码（最好结合使用场景，比如在缓存命中时使用哪个）HTTP协议（一些报头字段的作用，如cace-control、keep-alive）OSI协议、TCP/IP协议以及每层对应的协议。SESSION机制、cookie机制TCP三次握手、四次挥">
+<meta name="twitter:title" content="static总结">
+<meta name="twitter:description" content="1. static变量
+static是静态变量的类型说明符。静态变量属于静态存储方式，但是属于静态存储方式的量不一定就是静态变量。 例如外部变量虽属于静态存储方式，但不一定是静态变量，必须由static加以定义后才能成为静态外部变量，或称静态全局变量。
+2. 关键字static的作用
+1).在函数体内：声明为静态的变量在这一函数被调用的过程中维持其值不变，即静态变量的生存周期会延长，为整个程序的生">
 
 
 
@@ -133,13 +133,13 @@ TCP报头格式UDP报头格式TCP/UDP区别（不仅是宏观上的，最好能�
 
 
 
-  <link rel="canonical" href="https://qingwei9001.github.io/2017/11/10/求职面试/求职面试-网络/"/>
+  <link rel="canonical" href="https://qingwei9001.github.io/2016/11/10/求职面试/C++基础/static总结/"/>
 
 
 
 
 
-  <title> 后端开发面试总结-网络 | qingwei's personal blog </title>
+  <title> static总结 | qingwei's personal blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -278,7 +278,7 @@ TCP报头格式UDP报头格式TCP/UDP区别（不仅是宏观上的，最好能�
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://qingwei9001.github.io/2017/11/10/求职面试/求职面试-网络/">
+    <link itemprop="mainEntityOfPage" href="https://qingwei9001.github.io/2016/11/10/求职面试/C++基础/static总结/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="qingwei">
@@ -299,7 +299,7 @@ TCP报头格式UDP报头格式TCP/UDP区别（不仅是宏观上的，最好能�
             
             
               
-                后端开发面试总结-网络
+                static总结
               
             
           </h1>
@@ -314,8 +314,8 @@ TCP报头格式UDP报头格式TCP/UDP区别（不仅是宏观上的，最好能�
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-10T17:25:56+08:00">
-                2017-11-10
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-10T17:25:56+08:00">
+                2016-11-10
               </time>
             
 
@@ -359,8 +359,8 @@ TCP报头格式UDP报头格式TCP/UDP区别（不仅是宏观上的，最好能�
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/求职/面试题/网络/" itemprop="url" rel="index">
-                    <span itemprop="name">网络</span>
+                  <a href="/categories/求职/面试题/C/" itemprop="url" rel="index">
+                    <span itemprop="name">C++</span>
                   </a>
                 </span>
 
@@ -394,16 +394,28 @@ TCP报头格式UDP报头格式TCP/UDP区别（不仅是宏观上的，最好能�
       
 
       
-        <p>爱奇艺面试总结.2017</p>
-<hr>
-<p>##计算机网络##<br>基础部分</p>
-<p>TCP报头格式<br>UDP报头格式<br>TCP/UDP区别（不仅是宏观上的，最好能根据各自的机制讲解清楚）<br>HTTP状态码（最好结合使用场景，比如在缓存命中时使用哪个）<br>HTTP协议（一些报头字段的作用，如cace-control、keep-alive）<br>OSI协议、TCP/IP协议以及每层对应的协议。<br>SESSION机制、cookie机制<br>TCP三次握手、四次挥手（这个问题真的要回答吐了，不过真的是面试官最喜欢问的，建议每天手撸一遍，而且不只是每次请求的过程，各种FIN_WAIT、TIME_WAIT状态也要掌握）。<br>打开网页到页面显示之间的过程（涵盖了各个方面，DNS解析过程，Nginx请求转发、连接建立和保持过程、浏览器内容渲染过程，考虑的越详细越好）。<br>http和https区别，https在请求时额外的过程，https是如何保证数据安全的<br>IP地址子网划分<br>POST和GET区别<br>DNS解析过程</p>
-<p>深入部分 </p>
-<ol>
-<li>TCP如何保证数据的可靠传输的（这个问题可以引申出很多子问题，拥塞控制慢开始、拥塞避免、快重传、滑动窗口协议、停止等待协议、超时重传机制，最好都能掌握） </li>
-<li>地址解析协议ARP </li>
-<li>交换机和路由器的区别</li>
-</ol>
+        <p><strong>1. static变量</strong></p>
+<p>static是静态变量的类型说明符。静态变量属于静态存储方式，但是属于静态存储方式的量不一定就是静态变量。 例如外部变量虽属于静态存储方式，但不一定是静态变量，必须由static加以定义后才能成为静态外部变量，或称静态全局变量。</p>
+<p><strong>2. 关键字static的作用</strong></p>
+<p>1).在函数体内：声明为静态的变量在这一函数被调用的过程中维持其值不变，即静态变量的生存周期会延长，为整个程序的生命周期；但静态变量的作用域不变，即只能在本函数内使用。</p>
+<p>2).在模块内函数体外部：声明为静态的变量可以被模块内的所有函数访问，但不能被模块外的其他函数访问。它是一个本地的全局变量。（加上static，数据本地化）</p>
+<p>3).在模块内：声明为静态的函数只可被这一模块内的其他函数调用；即静态函数被限制在声明它的模块内使用，数据本地化。</p>
+<p><strong>3. static变量与普通变量的联系与区别</strong></p>
+<p>联系：static全局变量与普通全局变量都是是静态存储方式。</p>
+<p>区别：</p>
+<p>1).static全局变量与全局变量的作用域不同：</p>
+<pre><code>a).非静态全局变量的作用域为整个源程序，当一个源程序由多个源文件组成时，非静态的全局变量会在每个源文件中都有一份拷贝；
+b).static全局变量限制了其作用域，即只在定义该变量的源文件中可用，在其他文件中不可使用，同时static全局变量只初始化一次。即static使数据本地化。
+</code></pre><p>2).static局部变量与普通局部变量的生存周期不同，存储方式不同：</p>
+<pre><code>a).static局部变量在静态存储去；局部变量在栈中。
+b).static局部变量的生存周期会变长，即在定义时只初始化一次，在程序结束时才被释放，下一次运算依据上一次的结果值进行。
+c).局部变量会随函数的调用而多次初始化及多次释放；每次一次的初始化与释放与上次无关。
+</code></pre><p>3).static函数与普通函数作用域不同：</p>
+<pre><code>a).static函数的作用域仅在定义它的文件内可使用，外部文件不可使用。static函数在内存中只有一份。
+b).普通函数可在源程序的任何地方被使用，普通函数在每个被调用的文件中都有一份拷贝。
+</code></pre><p><strong>4. 静态变量的其他注意事项</strong></p>
+<p>1).类中静态成员函数与静态变量不需要通过创建对象实例化，就可以进行调用。而非静态变量必须通过创建对象实例化后，我们才能用这个对象调用它。是因为，静态成员和静态函数在类被声明就被创建了并分配了相应的空间，而非静态成员是只有类被创建实例时才会被分配内存空间。</p>
+<p>2).类中的静态方法只能使用静态成员，不能使用非静态成员。因为，静态成员函数只属于类本身，不属于类对象；静态方法中不可以使用隐式的this指针，无法访问类对象（this）的非静态成员。但非静态方法可以使用静态成员。</p>
 
       
     </div>
@@ -435,6 +447,8 @@ TCP报头格式UDP报头格式TCP/UDP区别（不仅是宏观上的，最好能�
           
             <a href="/tags/求职面试/" rel="tag"># 求职面试</a>
           
+            <a href="/tags/C/" rel="tag"># C++</a>
+          
         </div>
       
 
@@ -446,18 +460,14 @@ TCP报头格式UDP报头格式TCP/UDP区别（不仅是宏观上的，最好能�
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/11/10/求职面试/剑指offer题思想归纳/" rel="next" title="剑指offer题型思路总结">
-                <i class="fa fa-chevron-left"></i> 剑指offer题型思路总结
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/11/10/求职面试/求职面试-LINUX/" rel="prev" title="后端开发面试总结-LINUX">
-                后端开发面试总结-LINUX <i class="fa fa-chevron-right"></i>
+              <a href="/2016/11/10/求职面试/C++基础/指针与引用的区别/" rel="prev" title="指针与引用的区别">
+                指针与引用的区别 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
