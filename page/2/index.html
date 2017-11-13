@@ -401,22 +401,387 @@
 <p>联系：static全局变量与普通全局变量都是是静态存储方式。</p>
 <p>区别：</p>
 <p>1).static全局变量与全局变量的作用域不同：</p>
-<pre><code>a).非静态全局变量的作用域为整个源程序，当一个源程序由多个源文件组成时，
-非静态的全局变量会在每个源文件中都有一份拷贝；
-b).static全局变量限制了其作用域，即只在定义该变量的源文件中可用，
-在其他文件中不可使用，同时static全局变量只初始化一次。即static使数据本地化。
+<pre><code>a).非静态全局变量的作用域为整个源程序，当一个源程序由多个源文件组成时，非静态的全局变量会在每个源文件中都有一份拷贝；
+
+b).static全局变量限制了其作用域，即只在定义该变量的源文件中可用，在其他文件中不可使用，同时static全局变量只初始化一次。即static使数据本地化。
 </code></pre><p>2).static局部变量与普通局部变量的生存周期不同，存储方式不同：</p>
 <pre><code>a).static局部变量在静态存储去；局部变量在栈中。
-b).static局部变量的生存周期会变长，即在定义时只初始化一次，
-在程序结束时才被释放，下一次运算依据上一次的结果值进行。
-c).局部变量会随函数的调用而多次初始化及多次释放；
-每次一次的初始化与释放与上次无关。
+b).static局部变量的生存周期会变长，即在定义时只初始化一次，在程序结束时才被释放，下一次运算依据上一次的结果值进行。
+c).局部变量会随函数的调用而多次初始化及多次释放；每次一次的初始化与释放与上次无关。
 </code></pre><p>3).static函数与普通函数作用域不同：</p>
 <pre><code>a).static函数的作用域仅在定义它的文件内可使用，外部文件不可使用。static函数在内存中只有一份。
 b).普通函数可在源程序的任何地方被使用，普通函数在每个被调用的文件中都有一份拷贝。
 </code></pre><p><strong>4. 静态变量的其他注意事项</strong></p>
 <p>1).类中静态成员函数与静态变量不需要通过创建对象实例化，就可以进行调用。而非静态变量必须通过创建对象实例化后，我们才能用这个对象调用它。是因为，静态成员和静态函数在类被声明就被创建了并分配了相应的空间，而非静态成员是只有类被创建实例时才会被分配内存空间。</p>
 <p>2).类中的静态方法只能使用静态成员，不能使用非静态成员。因为，静态成员函数只属于类本身，不属于类对象；静态方法中不可以使用隐式的this指针，无法访问类对象（this）的非静态成员。但非静态方法可以使用静态成员。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://qingwei9001.github.io/2016/11/10/求职面试/C++基础/函数调用原理与栈堆/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="qingwei">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="qingwei's personal blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/11/10/求职面试/C++基础/函数调用原理与栈堆/" itemprop="url">
+                  函数调用原理与栈、堆
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-10T17:25:56+08:00">
+                2016-11-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/求职/" itemprop="url" rel="index">
+                    <span itemprop="name">求职</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/求职/面试题/" itemprop="url" rel="index">
+                    <span itemprop="name">面试题</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/求职/面试题/C/" itemprop="url" rel="index">
+                    <span itemprop="name">C++</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>1) 在栈上创建。</p>
+<p>在执行函数时，函数内局部变量的存储单元都在栈上创建，函数执行结束时这些存储单元自动被释放。栈内存分配运算内置于处理器的指令集中，一般使用寄存器来存取，效率很高，但是分配的内存容量有限。</p>
+<p>2) 从堆上分配，亦称动态内存分配。</p>
+<p>程序在运行的时候用malloc或new申请任意多少的内存，程序员自己负责在何时用free或delete来释放内存。动态内存的生存期由程序员自己决定，使用非常灵活。 </p>
+<p>3) 从静态存储区域分配。</p>
+<p>内存在程序编译的时候就已经分配好，这块内存在程序的整个运行期间都存在。例如全局变量，static变量。 </p>
+<p>4) 文字常量分配在文字常量区，程序结束后由系统释放。</p>
+<p>5）程序代码区。</p>
+<hr>
+<p>在程序中，调用函数和被调用函数之间的链接及信息交换需要通过栈这种结构来进行。</p>
+<p>当一个函数在运行期间调用另一个函数时，在运行被调用函数之前，系统需要先完成3件事：</p>
+<pre><code>(1) 将所有的实参，返回地址等信息传递给被调用函数保存；
+(2) 为被调动函数的局部变量分配存储区；
+(3) 将控制转移到被调函数入口；
+</code></pre><p>而从被调函数返回调用函数之前，系统也完成3件事：</p>
+<pre><code>(1) 保存被调函数的计算结果；
+(2) 释放被调函数的数据区；
+(3) 依照被调函数保存的返回地址将控制转移到调用函数。
+</code></pre><p>当有多个函数构成嵌套调用时（如：递归调用），按照“后调用先返回”的原则，函数之间的信息传递和控制转移可以用 “栈” 来实现。即系统将整个程序运行时所需的数据空间安排在一个栈中，每当调用一个函数时，就为它在栈顶分配一个存储区，每当从一个函数退出时，就释放它的存储区，所以当前正运行的函数在数据区必须在栈顶。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://qingwei9001.github.io/2016/11/10/求职面试/C++基础/堆栈溢出及解决办法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="qingwei">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="qingwei's personal blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/11/10/求职面试/C++基础/堆栈溢出及解决办法/" itemprop="url">
+                  堆栈溢出及解决办法
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-10T17:25:56+08:00">
+                2016-11-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/求职/" itemprop="url" rel="index">
+                    <span itemprop="name">求职</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/求职/面试题/" itemprop="url" rel="index">
+                    <span itemprop="name">面试题</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/求职/面试题/C/" itemprop="url" rel="index">
+                    <span itemprop="name">C++</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><strong>1. 什么是栈溢出</strong><br>栈用来给函数地址、函数参数、局部变量等分配内存空间的,在Windows下，栈一般默认为1-2M，一旦出现死循环或者是大量的递归调用函数时，在对函数地址及参数不断的压栈过程中，会造成栈容量超过1-2M而导致溢出。</p>
+<p><strong>2. 栈溢出的原因</strong></p>
+<p>出现栈内存溢出的常见原因有2个：</p>
+<p>1). 函数调用层次过深,每调用一次,函数的参数、局部变量等信息就压一次栈。</p>
+<p>2). 局部静态变量体积太大。即定义了一个非常大的静态变量。</p>
+<p>3). 出现无限死循环的情况。</p>
+<p><strong>3. 栈溢出的解决办法</strong></p>
+<p>1). 用栈把递归转换成非递归</p>
+<p>通常一个函数在调用另一个函数之前,要作如下的事情:</p>
+<pre><code>a). 将实参、返回地址等信息传递给被调用函数保存; 
+b). 被调用函数的局部变量分配存储区;
+c). 将控制转移到被调函数的入口。 
+</code></pre><p>从被调用函数返回调用函数之前,也要做三件事情:</p>
+<pre><code>a). 保存被调函数的计算结果;
+b). 释放被调函数的数据区;
+c). 依照被调函数保存的返回地址将控制转移到调用函数.
+</code></pre><p>所有的这些不论是变量还是地址,本质上来说都是”数据”,都是保存在系统所分配的栈中的. 那么自己就可以写一个栈来存储必要的数据，以减少系统负担</p>
+<p>2). 使用static对象替代nonstatic局部对象</p>
+<p>在递归函数设计中，可以使用static对象替代nonstatic局部对象（即栈对象），这不仅可以减少每次递归调用和返回时产生和释放nonstatic对象的开销，而且static对象还可以保存递归调用的中间状态，并且可为各个调用层所访问。</p>
+<p>3).增大堆栈大小值</p>
+<p>当创建一个线程的堆栈时，系统将会保留一个链接程序的/STACK开关指明的地址空间区域。但是，当调用CreateThread或_beginthreadex函数时，可以重载原先提交的内存数量。这两个函数都有一个参数，可以用来重载原先提交给堆栈的地址空间的内存数量。如果设定这个参数为0，那么系统将使用/STACK开关指明的已提交的堆栈大小值。后面将假定我们使用默认的堆栈大小值，即1MB的保留区域，每次提交一个页面的内存。</p>
 
           
         
@@ -638,410 +1003,6 @@ b).普通函数可在源程序的任何地方被使用，普通函数在每个�
 <p>5.检查List、MAP等集合对象是否有使用完后，未清除的问题。List、MAP等集合对象会始终存有对对象的引用，使得这些对象不能被GC回收。</p>
 <pre><code>第四步，使用内存查看工具动态查看内存使用情况
 </code></pre><p><a href="https://www.cnblogs.com/200911/p/3965108.html" target="_blank" rel="external">https://www.cnblogs.com/200911/p/3965108.html</a></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://qingwei9001.github.io/2016/11/10/求职面试/C++基础/内存分配及堆和栈的区别/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="qingwei">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="qingwei's personal blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/11/10/求职面试/C++基础/内存分配及堆和栈的区别/" itemprop="url">
-                  堆和栈的区别
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-10T17:25:56+08:00">
-                2016-11-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/求职/" itemprop="url" rel="index">
-                    <span itemprop="name">求职</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/求职/面试题/" itemprop="url" rel="index">
-                    <span itemprop="name">面试题</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/求职/面试题/C/" itemprop="url" rel="index">
-                    <span itemprop="name">C++</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <hr>
-<p>一个由C/C++编译的程序占用的内存分为以下几个部分：（5个区）</p>
-<p>1、栈区（stack）：由编译器自动分配释放，存放函数的参数值，局部变量的值<br>等。其操作方式类似于数据结构中的栈。</p>
-<p>2、堆区（heap） ：一般由程序员分配释放，若程序员不释放，程序结束时可能<br>由OS回收 。注意它与数据结构中的堆是两回事，分配方式类似于链表。</p>
-<p>3、全局区（静态区）（static）：全局变量和静态变量的存储是放在一块的，初始<br>化的全局变量和静态变量在一块区域， 未初始化的全局变量和未初始化的静态变量在相邻<br>的另一块区域。程序结束后由系统释放。</p>
-<p>4、文字常量区：存放常量字符串的地方。 程序结束后由系统释放。</p>
-<p>5、程序代码区：存放函数体的二进制代码。</p>
-<hr>
-<p><strong>1. 堆和栈的基本概念</strong></p>
-<p>堆和栈是两种数据结构。堆和栈都是一种数据项按序排列的数据结构，只能在一端(称为栈顶(top))对数据项进行插入和删除。在单片机应用中，堆栈是个特殊的存储区，主要功能是暂时存放数据和地址，通常用来保护断点和现场。</p>
-<p>要点：堆，队列,先进先出（FIFO—first in first out）。栈，先进后出(FILO—First-In/Last-Out)。一般情况下，如果有人把堆栈合起来说，那它的意思是栈，可不是堆。。。。。</p>
-<p><strong>2. 堆栈空间分配</strong></p>
-<p>栈（操作系统）：由操作系统自动分配释放 ，存放函数的参数值，局部变量的值等。<br>其操作方式类似于数据结构中的栈。</p>
-<p>堆（操作系统）： 一般由程序员分配释放， 若程序员不释放，程序结束时可能由OS<br>回收，分配方式倒是类似于链表（队列）。</p>
-<p><strong>3. 堆栈缓存方式</strong></p>
-<p>栈使用的是一级缓存， 他们通常都是被调用时处于存储空间中，调用完毕立即释放。</p>
-<p>堆则是存放在二级缓存中，生命周期由虚拟机的垃圾回收算法来决定（并不是一旦成<br>为孤儿对象就能被回收）。所以调用这些对象的速度要相对来得低一些。</p>
-<p><strong>4. 堆栈数据结构区别</strong></p>
-<p>栈的数据结构：一种先进后出的数据结构。动态数组。</p>
-<p>堆的数据结构：堆可以被看成是一棵树（平衡二叉树），如：堆排序。</p>
-<hr>
-<p>堆和栈究竟有什么区别？主要的区别由以下几点：</p>
-<pre><code>1、管理方式不同；
-2、空间大小不同；
-3、是否产生碎片；
-4、生长方向不同；
-5、分配方式不同；
-6、分配效率不同；
-</code></pre><p>1.管理方式：</p>
-<p>栈：是由编译器自动管理，无需我们手工控制；</p>
-<p>堆：释放工作由程序员控制，容易产生内存泄漏（memory leak）。</p>
-<p>2.空间大小：</p>
-<p>栈：在Windows下,栈是向低地址扩展的数据结构，是一块连续的内存的区域。栈顶的地址和栈的最大容量是系统预先规定好的，栈的大小是2M（也有的说是1M，总之是一个编译时就确定的常数），如果申请的空间超过栈的剩余空间时，提示overflow。因此，能从栈获得的空间较小。</p>
-<p>堆：堆是向高地址扩展的数据结构，是不连续的内存区域。这是由于系统是用链表来管理空闲的内存地址，自然是不连续的，而链表的遍历方向是由低地址向高地址。堆内存可以达到4G的空间，堆的大小受限于计算机系统中有效的虚拟内存，从这个角度来看堆内存几乎是没有什么限制的。</p>
-<p>3.是否产生碎片：</p>
-<p>栈：栈不会产生碎片，栈分配的内存是一块连续的内存空间；因为栈是先进后出的队列，永远不可能有一个内存块从栈的中间弹出，在他弹出之前，在他上面的后进的栈内容已经被弹出，从而能保证所在的区域永远是一块连续的内存空间。</p>
-<p>堆：由于程序员频繁的new/delete势必会造成内存空间的不连续，从而造成大量的碎片，使程序效率降低。</p>
-<p>4.生长方向：</p>
-<p>栈：栈是向低地址扩展的数据结构，是一块连续的内存的区域；它的生长方向是向下的，是向着内存地址减小的方向增长。</p>
-<p>堆：堆是向高地址扩展的数据结构，是不连续的内存区域；生它的生长方向是向上的，也就是向着内存地址增加的方向。</p>
-<p>5.分配方式：</p>
-<p>栈：有2种分配方式：静态分配和动态分配。静态分配是编译器完成的，比如局部变量的分配。动态分配由alloca函数进行分配，但是栈的动态分配和堆是不同的，他的动态分配是由编译器进行分配和释放，无需我们手工实现。</p>
-<p>堆：是动态分配的，没有静态分配的堆。一般有程序员通过malloc/new进行动态分配的；<br>且分配的内存也必须有程序员手动调用free/delete释放，否则会造成内存泄漏。</p>
-<p>6.分配效率：</p>
-<p>栈：是由机器系统提供的数据结构，计算机会在底层对栈提供支持，分配专门的寄存器存放栈的地址，压栈出栈都有专门的指令执行，这就决定了栈的效率比较高。</p>
-<p>堆：是C/C++函数库提供的，它的机制是很复杂的，例如为了分配一块内存，库函数会按照一定的算法（具体的算法可以参考数据结构/操作系统）在堆内存中搜索可用的足够大小的空间，如果没有足够大小的空间（可能是由于内存碎片太多），就有可能调用系统功能去增加程序数据段的内存空间，这样就有机会分到足够大小的内存，然后进行返回。显然，堆的效率比栈要低得多。</p>
-<hr>
-<p>一个由C/C++编译的程序占用的内存分为以下几个部分：</p>
-<p>1、栈区（stack）：由编译器自动分配释放，存放函数的参数值，局部变量的值<br>等。其操作方式类似于数据结构中的栈。</p>
-<p>2、堆区（heap） ：一般由程序员分配释放，若程序员不释放，程序结束时可能<br>由OS回收 。注意它与数据结构中的堆是两回事，分配方式类似于链表。</p>
-<p>3、全局区（静态区）（static）：全局变量和静态变量的存储是放在一块的，初始<br>化的全局变量和静态变量在一块区域， 未初始化的全局变量和未初始化的静态变量在相邻<br>的另一块区域。程序结束后由系统释放。</p>
-<p>4、文字常量区：存放常量字符串的地方。 程序结束后由系统释放。</p>
-<p>5、程序代码区：存放函数体的二进制代码。</p>
-<p>可参考：<br><a href="http://www.cnblogs.com/mysticCoder/p/4921724.html" target="_blank" rel="external">http://www.cnblogs.com/mysticCoder/p/4921724.html</a></p>
-<p><a href="http://blog.csdn.net/hairetz/article/details/4141043/" target="_blank" rel="external">http://blog.csdn.net/hairetz/article/details/4141043/</a></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://qingwei9001.github.io/2016/11/10/求职面试/C++基础/堆栈溢出及解决办法/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="qingwei">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="qingwei's personal blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/11/10/求职面试/C++基础/堆栈溢出及解决办法/" itemprop="url">
-                  堆栈溢出及解决办法
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-10T17:25:56+08:00">
-                2016-11-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/求职/" itemprop="url" rel="index">
-                    <span itemprop="name">求职</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/求职/面试题/" itemprop="url" rel="index">
-                    <span itemprop="name">面试题</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/求职/面试题/C/" itemprop="url" rel="index">
-                    <span itemprop="name">C++</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><strong>1. 什么是栈溢出</strong><br>栈用来给函数地址、函数参数、局部变量等分配内存空间的,在Windows下，栈一般默认为1-2M，一旦出现死循环或者是大量的递归调用函数时，在对函数地址及参数不断的压栈过程中，会造成栈容量超过1-2M而导致溢出。</p>
-<p><strong>2. 栈溢出的原因</strong></p>
-<p>出现栈内存溢出的常见原因有2个：</p>
-<p>1). 函数调用层次过深,每调用一次,函数的参数、局部变量等信息就压一次栈。</p>
-<p>2). 局部静态变量体积太大。即定义了一个非常大的静态变量。</p>
-<p>3). 出现无限死循环的情况。</p>
-<p><strong>3. 栈溢出的解决办法</strong></p>
-<p>1). 用栈把递归转换成非递归</p>
-<p>通常一个函数在调用另一个函数之前,要作如下的事情:</p>
-<pre><code>a). 将实参、返回地址等信息传递给被调用函数保存; 
-b). 被调用函数的局部变量分配存储区;
-c). 将控制转移到被调函数的入口。 
-</code></pre><p>从被调用函数返回调用函数之前,也要做三件事情:</p>
-<pre><code>a). 保存被调函数的计算结果;
-b). 释放被调函数的数据区;
-c). 依照被调函数保存的返回地址将控制转移到调用函数.
-</code></pre><p>所有的这些不论是变量还是地址,本质上来说都是”数据”,都是保存在系统所分配的栈中的. 那么自己就可以写一个栈来存储必要的数据，以减少系统负担</p>
-<p>2). 使用static对象替代nonstatic局部对象</p>
-<p>在递归函数设计中，可以使用static对象替代nonstatic局部对象（即栈对象），这不仅可以减少每次递归调用和返回时产生和释放nonstatic对象的开销，而且static对象还可以保存递归调用的中间状态，并且可为各个调用层所访问。</p>
-<p>3).增大堆栈大小值</p>
-<p>当创建一个线程的堆栈时，系统将会保留一个链接程序的/STACK开关指明的地址空间区域。但是，当调用CreateThread或_beginthreadex函数时，可以重载原先提交的内存数量。这两个函数都有一个参数，可以用来重载原先提交给堆栈的地址空间的内存数量。如果设定这个参数为0，那么系统将使用/STACK开关指明的已提交的堆栈大小值。后面将假定我们使用默认的堆栈大小值，即1MB的保留区域，每次提交一个页面的内存。</p>
 
           
         
