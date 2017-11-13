@@ -270,416 +270,6 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://qingwei9001.github.io/2016/11/10/求职面试/C++基础/static总结/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="qingwei">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="qingwei's personal blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/11/10/求职面试/C++基础/static总结/" itemprop="url">
-                  static总结
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-10T17:25:56+08:00">
-                2016-11-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/求职/" itemprop="url" rel="index">
-                    <span itemprop="name">求职</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/求职/面试题/" itemprop="url" rel="index">
-                    <span itemprop="name">面试题</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/求职/面试题/C/" itemprop="url" rel="index">
-                    <span itemprop="name">C++</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><strong>1. static变量</strong></p>
-<p>static是静态变量的类型说明符。静态变量属于静态存储方式，但是属于静态存储方式的量不一定就是静态变量。 例如外部变量虽属于静态存储方式，但不一定是静态变量，必须由static加以定义后才能成为静态外部变量，或称静态全局变量。</p>
-<p><strong>2. 关键字static的作用</strong></p>
-<p>1).在函数体内：声明为静态的变量在这一函数被调用的过程中维持其值不变，即静态变量的生存周期会延长，为整个程序的生命周期；但静态变量的作用域不变，即只能在本函数内使用。</p>
-<p>2).在模块内函数体外部：声明为静态的变量可以被模块内的所有函数访问，但不能被模块外的其他函数访问。它是一个本地的全局变量。（加上static，数据本地化）</p>
-<p>3).在模块内：声明为静态的函数只可被这一模块内的其他函数调用；即静态函数被限制在声明它的模块内使用，数据本地化。</p>
-<p><strong>3. static变量与普通变量的联系与区别</strong></p>
-<p>联系：static全局变量与普通全局变量都是是静态存储方式。</p>
-<p>区别：</p>
-<p>1).static全局变量与全局变量的作用域不同：</p>
-<pre><code>a).非静态全局变量的作用域为整个源程序，当一个源程序由多个源文件组成时，非静态的全局
-变量会在每个源文件中都有一份拷贝；    
-b).static全局变量限制了其作用域，即只在定义该变量的源文件中可用，在其他文件中不可
-使用，同时static全局变量只初始化一次。即static使数据本地化。
-</code></pre><p>2).static局部变量与普通局部变量的生存周期不同，存储方式不同：</p>
-<pre><code>a).static局部变量在静态存储去；局部变量在栈中。
-b).static局部变量的生存周期会变长，即在定义时只初始化一次，在程序结束时才被释放，
-下一次运算依据上一次的结果值进行。
-c).局部变量会随函数的调用而多次初始化及多次释放；每次一次的初始化与释放与上次无关。
-</code></pre><p>3).static函数与普通函数作用域不同：</p>
-<pre><code>a).static函数的作用域仅在定义它的文件内可使用，外部文件不可使用。static函数在内存中只有一份。
-b).普通函数可在源程序的任何地方被使用，普通函数在每个被调用的文件中都有一份拷贝。
-</code></pre><p><strong>4. 静态变量的其他注意事项</strong></p>
-<p>1).类中静态成员函数与静态变量不需要通过创建对象实例化，就可以进行调用。而非静态变量必须通过创建对象实例化后，我们才能用这个对象调用它。是因为，静态成员和静态函数在类被声明就被创建了并分配了相应的空间，而非静态成员是只有类被创建实例时才会被分配内存空间。</p>
-<p>2).类中的静态方法只能使用静态成员，不能使用非静态成员。因为，静态成员函数只属于类本身，不属于类对象；静态方法中不可以使用隐式的this指针，无法访问类对象（this）的非静态成员。但非静态方法可以使用静态成员。</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://qingwei9001.github.io/2016/11/10/求职面试/C++基础/内存溢出和内存泄漏/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="qingwei">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="qingwei's personal blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/11/10/求职面试/C++基础/内存溢出和内存泄漏/" itemprop="url">
-                  内存溢出、内存泄漏及解决办法
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-10T17:25:56+08:00">
-                2016-11-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/求职/" itemprop="url" rel="index">
-                    <span itemprop="name">求职</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/求职/面试题/" itemprop="url" rel="index">
-                    <span itemprop="name">面试题</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/求职/面试题/C/" itemprop="url" rel="index">
-                    <span itemprop="name">C++</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><strong>1. 内存泄漏与内存溢出</strong></p>
-<p>内存溢出（out of memory）：是指程序在申请内存空间时，没有足够的内存空间供其使用，出现out of memory；即为内存溢出。内存溢出是指要求分配的内存超出了系统能给的大小，系统不能满足需求，于是产生溢出。</p>
-<p>内存泄露（memory leak）：指程序中己动态分配的堆内存由于某种原因程序未释放或无法释放，造成系统内存的浪费，导致程序运行速度减慢甚至系统崩溃等严重后果。程序在申请内存后（malloc/new），没有合理的释放（free/delete）已申请的内存空间，而造成该内存空间在以后不可再使用的情况，称为内存泄漏。一次内存泄露危害可以忽略，但内存泄露堆积后果很严重，无论多少内存,迟早会被占光。即内存泄漏最终会导致内存溢出。</p>
-<p><strong>2. 内存泄漏的种类</strong></p>
-<p>以发生的方式来分类，内存泄漏可以分为4类： </p>
-<ol>
-<li>常发性内存泄漏。发生内存泄漏的代码会被多次执行到，每次被执行的时候都会导致一块内存泄漏。 </li>
-<li>偶发性内存泄漏。发生内存泄漏的代码只有在某些特定环境或操作过程下才会发生。常发性和偶发性是相对的。对于特定的环境，偶发性的也许就变成了常发性的。所以测试环境和测试方法对检测内存泄漏至关重要。 </li>
-<li>一次性内存泄漏。发生内存泄漏的代码只会被执行一次，或者由于算法上的缺陷，导致总会有一块仅且一块内存发生泄漏。比如，在类的构造函数中分配内存，在析构函数中却没有释放该内存，所以内存泄漏只会发生一次。 </li>
-<li><p>隐式内存泄漏。程序在运行过程中不停的分配内存，但是直到结束的时候才释放内存。严格的说这里并没有发生内存泄漏，因为最终程序释放了所有申请的内存。但是对于一个服务器程序，需要运行几天，几周甚至几个月，不及时释放内存也可能导致最终耗尽系统的所有内存。所以，我们称这类内存泄漏为隐式内存泄漏。 </p>
-<p> 从用户使用程序的角度来看，内存泄漏本身不会产生什么危害，作为一般的用户，根本感觉不到内存泄漏的存在。真正有危害的是内存泄漏的堆积，这会最终消耗尽系统所有的内存。从这个角度来说，一次性内存泄漏并没有什么危害，因为它不会堆积，而隐式内存泄漏危害性则非常大，因为较之于常发性和偶发性内存泄漏它更难被检测到 </p>
-</li>
-</ol>
-<p><strong>3. 内存泄漏的解决办法</strong></p>
-<ol>
-<li><p>良好的编码习惯，尽量在涉及内存的程序段，检测出内存泄露。</p>
-<p> 1). 涉及内存分配和释放的函数要成对出现。(malloc/free、new/delete成对出现)</p>
-<p> 2). 尽量在一个模块内部实现或者相关联的模块内实现内存的成对分配和释放，如在一个类的构造函数中创建对象分配内存，则在该类的虚函数中释放该对象的内存空间。</p>
-</li>
-<li><p>boost中的智能指针。利用指针的引用计数，来管理内存的分配和释放问题。</p>
-</li>
-<li><p>重载new和delete。其主要思路是将分配的内存以链表的形式自行管理，使用完毕之后从链表中删除，程序结束时可检查修改链表，其中记录了内存泄露的文件，所在文件的行数以及泄露的大小。<br><a href="http://blog.csdn.net/na_he/article/details/7429171" target="_blank" rel="external">http://blog.csdn.net/na_he/article/details/7429171</a></p>
-</li>
-</ol>
-<p><strong>4. 如何进行内存检测</strong></p>
-<p>1). windows任务管理器（Task Manager）：是一个很简单的办法来检查一个程序是否有内存泄漏，运行程序，然后在任务管理器里面查看 “内存使用”和”虚拟内存大小”两项，当程序请求了它所需要的内存之后，如果虚拟内存还是持续的增长的话，就说明了这个程序有内存泄漏问题。 当然如果内存泄漏的数目非常的小，用这种方法可能要过很长时间才能看的出来。 </p>
-<p>2).用CompuWare的BoundChecker 之类的工具来检测。其他一些常见的工具插件：<a href="http://blog.csdn.net/na_he/article/details/7431367" target="_blank" rel="external">http://blog.csdn.net/na_he/article/details/7431367</a></p>
-<p>3).Visual C++的Debug版本中的C运行库(C Runtime Library)。它已经提供好些函数来帮助你诊断你的代码和跟踪内存泄漏。 而且最方便的地方是这些函数在Release版本中完全不起任何作用，这样就不会影响你的Release版本程序的运行效率。 </p>
-<p>4).MFC类库中的Debug版本；因为MFC重载了Debug版本的new 和delete操作符， 并且对一些API函数重新进行了包装。在MFC类库中检查内存泄漏的Class就叫CMemoryState，它重新包装了了_CrtMemState，_CrtMemCheckPoint， _CrtMemDfference， _CrtMemDumpAllObjectsSince这些函数。</p>
-<p>可参考：<a href="http://blog.csdn.net/sunnylion1982/article/details/8186801" target="_blank" rel="external">http://blog.csdn.net/sunnylion1982/article/details/8186801</a></p>
-<p><strong>5. 内存溢出的原因</strong></p>
-<p>引起内存溢出的原因有很多种，常见的有以下几种：</p>
-<pre><code>1.内存中加载的数据量过于庞大，如一次从数据库取出过多数据；
-
-2.集合类中有对对象的引用，使用完后未清空，使得JVM不能回收；
-
-3.代码中存在死循环或循环产生过多重复的对象实体；
-
-4.使用的第三方软件中的BUG；
-
-5.启动参数内存值设定的过小；
-</code></pre><p><strong>6. 内存溢出的解决办法</strong></p>
-<p>内存溢出的解决方案：</p>
-<pre><code>第一步，修改JVM启动参数，直接增加内存。(-Xms，-Xmx参数一定不要忘记加。)
-
-第二步，检查错误日志，查看“OutOfMemory”错误前是否有其它异常或错误。
-
-第三步，对代码进行走查和分析，找出可能发生内存溢出的位置。
-
-    重点排查以下几点：
-</code></pre><p>1.检查对数据库查询中，是否有一次获得全部数据的查询。一般来说，如果一次取十万条记录到内存，就可能引起内存溢出。这个问题比较隐蔽，在上线前，数据库中数据较少，不容易出问题，上线后，数据库中数据多了，一次查询就有可能引起内存溢出。因此对于数据库查询尽量采用分页的方式查询。</p>
-<p>2.检查代码中是否有死循环或递归调用。 </p>
-<p>3.检查是否有大循环重复产生新对象实体。 </p>
-<p>4.检查对数据库查询中，是否有一次获得全部数据的查询。一般来说，如果一次取十万条记录到内存，就可能引起内存溢出。这个问题比较隐蔽，在上线前，数据库中   数据较少，不容易出问题，上线后，数据库中数据多了，一次查询就有可能引起内存溢出。因此对于数据库查询尽量采用分页的方式查询。 </p>
-<p>5.检查List、MAP等集合对象是否有使用完后，未清除的问题。List、MAP等集合对象会始终存有对对象的引用，使得这些对象不能被GC回收。</p>
-<pre><code>第四步，使用内存查看工具动态查看内存使用情况
-</code></pre><p><a href="https://www.cnblogs.com/200911/p/3965108.html" target="_blank" rel="external">https://www.cnblogs.com/200911/p/3965108.html</a></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="https://qingwei9001.github.io/2016/11/10/求职面试/C++基础/堆栈溢出及解决办法/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1084,6 +674,189 @@ c). 依照被调函数保存的返回地址将控制转移到调用函数.
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://qingwei9001.github.io/2016/11/10/求职面试/C++基础/函数调用原理与栈堆/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="qingwei">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="qingwei's personal blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/11/10/求职面试/C++基础/函数调用原理与栈堆/" itemprop="url">
+                  函数调用原理与栈、堆
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-10T17:25:56+08:00">
+                2016-11-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/求职/" itemprop="url" rel="index">
+                    <span itemprop="name">求职</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/求职/面试题/" itemprop="url" rel="index">
+                    <span itemprop="name">面试题</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/求职/面试题/C/" itemprop="url" rel="index">
+                    <span itemprop="name">C++</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>1) 在栈上创建。</p>
+<p>在执行函数时，函数内局部变量的存储单元都在栈上创建，函数执行结束时这些存储单元自动被释放。栈内存分配运算内置于处理器的指令集中，一般使用寄存器来存取，效率很高，但是分配的内存容量有限。</p>
+<p>2) 从堆上分配，亦称动态内存分配。</p>
+<p>程序在运行的时候用malloc或new申请任意多少的内存，程序员自己负责在何时用free或delete来释放内存。动态内存的生存期由程序员自己决定，使用非常灵活。 </p>
+<p>3) 从静态存储区域分配。</p>
+<p>内存在程序编译的时候就已经分配好，这块内存在程序的整个运行期间都存在。例如全局变量，static变量。 </p>
+<p>4) 文字常量分配在文字常量区，程序结束后由系统释放。</p>
+<p>5）程序代码区。</p>
+<hr>
+<p>在程序中，调用函数和被调用函数之间的链接及信息交换需要通过栈这种结构来进行。</p>
+<p>当一个函数在运行期间调用另一个函数时，在运行被调用函数之前，系统需要先完成3件事：</p>
+<pre><code>(1) 将所有的实参，返回地址等信息传递给被调用函数保存；
+(2) 为被调动函数的局部变量分配存储区；
+(3) 将控制转移到被调函数入口；
+</code></pre><p>而从被调函数返回调用函数之前，系统也完成3件事：</p>
+<pre><code>(1) 保存被调函数的计算结果；
+(2) 释放被调函数的数据区；
+(3) 依照被调函数保存的返回地址将控制转移到调用函数。
+</code></pre><p>当有多个函数构成嵌套调用时（如：递归调用），按照“后调用先返回”的原则，函数之间的信息传递和控制转移可以用 “栈” 来实现。即系统将整个程序运行时所需的数据空间安排在一个栈中，每当调用一个函数时，就为它在栈顶分配一个存储区，每当从一个函数退出时，就释放它的存储区，所以当前正运行的函数在数据区必须在栈顶。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="https://qingwei9001.github.io/2016/11/10/求职面试/C++基础/指针与引用的区别/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1230,6 +1003,195 @@ int a=1; int &amp;b=a;
 <p>3).指针的值可以为空，但是引用的值不能为NULL，并且引用在定义的时候必须初始化；</p>
 <p>4).”sizeof引用”得到的是所指向的变量(对象)的大小，而”sizeof指针”得到的是指针本身的大小；</p>
 <p>5).指针和引用的自增(++)运算意义不一样；</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://qingwei9001.github.io/2016/11/10/求职面试/C++基础/static总结/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="qingwei">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="qingwei's personal blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/11/10/求职面试/C++基础/static总结/" itemprop="url">
+                  static总结
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-10T17:25:56+08:00">
+                2016-11-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/求职/" itemprop="url" rel="index">
+                    <span itemprop="name">求职</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/求职/面试题/" itemprop="url" rel="index">
+                    <span itemprop="name">面试题</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/求职/面试题/C/" itemprop="url" rel="index">
+                    <span itemprop="name">C++</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><strong>1. static变量</strong></p>
+<p>static是静态变量的类型说明符。静态变量属于静态存储方式，但是属于静态存储方式的量不一定就是静态变量。 例如外部变量虽属于静态存储方式，但不一定是静态变量，必须由static加以定义后才能成为静态外部变量，或称静态全局变量。</p>
+<p><strong>2. 关键字static的作用</strong></p>
+<p>1).在函数体内：声明为静态的变量在这一函数被调用的过程中维持其值不变，即静态变量的生存周期会延长，为整个程序的生命周期；但静态变量的作用域不变，即只能在本函数内使用。</p>
+<p>2).在模块内函数体外部：声明为静态的变量可以被模块内的所有函数访问，但不能被模块外的其他函数访问。它是一个本地的全局变量。（加上static，数据本地化）</p>
+<p>3).在模块内：声明为静态的函数只可被这一模块内的其他函数调用；即静态函数被限制在声明它的模块内使用，数据本地化。</p>
+<p><strong>3. static变量与普通变量的联系与区别</strong></p>
+<p>联系：static全局变量与普通全局变量都是是静态存储方式。</p>
+<p>区别：</p>
+<p>1).static全局变量与全局变量的作用域不同：</p>
+<pre><code>a).非静态全局变量的作用域为整个源程序，当一个源程序由多个源文件组成时，非静态的全局
+变量会在每个源文件中都有一份拷贝；    
+b).static全局变量限制了其作用域，即只在定义该变量的源文件中可用，在其他文件中不可
+使用，同时static全局变量只初始化一次。即static使数据本地化。
+</code></pre><p>2).static局部变量与普通局部变量的生存周期不同，存储方式不同：</p>
+<pre><code>a).static局部变量在静态存储去；局部变量在栈中。
+b).static局部变量的生存周期会变长，即在定义时只初始化一次，在程序结束时才被释放，
+下一次运算依据上一次的结果值进行。
+c).局部变量会随函数的调用而多次初始化及多次释放；每次一次的初始化与释放与上次无关。
+</code></pre><p>3).static函数与普通函数作用域不同：</p>
+<pre><code>a).static函数的作用域仅在定义它的文件内可使用，外部文件不可使用。static函数在内存中只有一份。
+b).普通函数可在源程序的任何地方被使用，普通函数在每个被调用的文件中都有一份拷贝。
+</code></pre><p><strong>4. 静态变量的其他注意事项</strong></p>
+<p>1).类中静态成员函数与静态变量不需要通过创建对象实例化，就可以进行调用。而非静态变量必须通过创建对象实例化后，我们才能用这个对象调用它。是因为，静态成员和静态函数在类被声明就被创建了并分配了相应的空间，而非静态成员是只有类被创建实例时才会被分配内存空间。</p>
+<p>2).类中的静态方法只能使用静态成员，不能使用非静态成员。因为，静态成员函数只属于类本身，不属于类对象；静态方法中不可以使用隐式的this指针，无法访问类对象（this）的非静态成员。但非静态方法可以使用静态成员。</p>
 
           
         
