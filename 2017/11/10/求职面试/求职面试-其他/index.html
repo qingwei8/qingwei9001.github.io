@@ -1,0 +1,844 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="求职面试," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="爱奇艺面试总结.2017
+
+面向对象编程、C++基础
+静态多态性和动态多态性，为什么一个称作静态一个称作动态。
+内存分几个区？
+栈溢出是怎么回事？
+什么是内存泄漏？
+函数的调用机制？函数调用栈的原理？
+C++中的STL？
+虚函数与纯虚函数？http://blog.csdn.net/hackbuteer1/article/details/7558868
+
+const
+
+static
+sizeof总结">
+<meta property="og:type" content="article">
+<meta property="og:title" content="后端开发面试总结-其他">
+<meta property="og:url" content="https://qingwei9001.github.io/2017/11/10/求职面试/求职面试-其他/index.html">
+<meta property="og:site_name" content="qingwei's personal blog">
+<meta property="og:description" content="爱奇艺面试总结.2017
+
+面向对象编程、C++基础
+静态多态性和动态多态性，为什么一个称作静态一个称作动态。
+内存分几个区？
+栈溢出是怎么回事？
+什么是内存泄漏？
+函数的调用机制？函数调用栈的原理？
+C++中的STL？
+虚函数与纯虚函数？http://blog.csdn.net/hackbuteer1/article/details/7558868
+
+const
+
+static
+sizeof总结">
+<meta property="og:updated_time" content="2017-11-13T10:47:14.549Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="后端开发面试总结-其他">
+<meta name="twitter:description" content="爱奇艺面试总结.2017
+
+面向对象编程、C++基础
+静态多态性和动态多态性，为什么一个称作静态一个称作动态。
+内存分几个区？
+栈溢出是怎么回事？
+什么是内存泄漏？
+函数的调用机制？函数调用栈的原理？
+C++中的STL？
+虚函数与纯虚函数？http://blog.csdn.net/hackbuteer1/article/details/7558868
+
+const
+
+static
+sizeof总结">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://qingwei9001.github.io/2017/11/10/求职面试/求职面试-其他/"/>
+
+
+
+
+
+  <title> 后端开发面试总结-其他 | qingwei's personal blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">qingwei's personal blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Coding forever...</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://qingwei9001.github.io/2017/11/10/求职面试/求职面试-其他/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="qingwei">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="qingwei's personal blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                后端开发面试总结-其他
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-10T17:25:56+08:00">
+                2017-11-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/求职/" itemprop="url" rel="index">
+                    <span itemprop="name">求职</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/求职/面试题/" itemprop="url" rel="index">
+                    <span itemprop="name">面试题</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/求职/面试题/其他/" itemprop="url" rel="index">
+                    <span itemprop="name">其他</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>爱奇艺面试总结.2017</p>
+<hr>
+<h1 id="面向对象编程、C-基础"><a href="#面向对象编程、C-基础" class="headerlink" title="面向对象编程、C++基础"></a>面向对象编程、C++基础</h1><ol>
+<li>静态多态性和动态多态性，为什么一个称作静态一个称作动态。</li>
+<li>内存分几个区？</li>
+<li>栈溢出是怎么回事？</li>
+<li>什么是内存泄漏？</li>
+<li>函数的调用机制？函数调用栈的原理？</li>
+<li>C++中的STL？</li>
+<li><p>虚函数与纯虚函数？<br><a href="http://blog.csdn.net/hackbuteer1/article/details/7558868" target="_blank" rel="external">http://blog.csdn.net/hackbuteer1/article/details/7558868</a></p>
+</li>
+<li><p>const</p>
+</li>
+<li>static</li>
+<li>sizeof总结：<a href="http://www.voidcn.com/article/p-rkkgfrwr-zx.html" target="_blank" rel="external">http://www.voidcn.com/article/p-rkkgfrwr-zx.html</a></li>
+</ol>
+<ol>
+<li>指针与引用</li>
+<li></li>
+</ol>
+<hr>
+<p>#数据结构部分#</p>
+<ol>
+<li>快速排序的思想？</li>
+<li><p>关于环的问题，怎么判断一个链表中是不是有环，怎么判断两个环相遇的地点在哪？</p>
+</li>
+<li><p>10000个数取前50，用哪种排序</p>
+<p> 数据量很小的情况下：10万以下，可使用快速排序法<br> 数据量很大的情况下：10万以上，可以使用堆排序的方法</p>
+<p> 可参考：<br><a href="http://blog.csdn.net/will130/article/details/49635429" target="_blank" rel="external">http://blog.csdn.net/will130/article/details/49635429</a></p>
+</li>
+</ol>
+<hr>
+<h1 id="网络部分"><a href="#网络部分" class="headerlink" title="网络部分"></a>网络部分</h1><ol>
+<li>TCP的三次握手，四次挥手？TIME_WAIT的作用及为什么要等待2MSL的时间？</li>
+<li>TCP/IP协议   在整个网络中是怎么传输的（从网卡接收的中断来说）：</li>
+<li>查看网卡中断 # cat /proc/interrupts|grep “CPU|eth0”</li>
+<li>相对于其他同学的优势</li>
+<li>网络编程socket</li>
+</ol>
+<hr>
+<h1 id="LINUX基础知识"><a href="#LINUX基础知识" class="headerlink" title="LINUX基础知识"></a>LINUX基础知识</h1><ol>
+<li>shell脚本  查找最大的每行。统计日志文件中每秒的流量</li>
+<li>shell：查看进程，产看磁盘空间，vi查找并且替换的命令</li>
+</ol>
+<p>有个文件记录单词，统计出频率最高的10个单词</p>
+<p>我说建立个10的最小堆，然后不断更新这个堆。</p>
+<p>然后他指出了错误，因为单词的频率是不知道的，然后我补充说先通过一个HashMap来统计词的频率，然后再像刚才那样，分析时间复杂度就是O(n)+log10</p>
+<p>项目中遇到的困难（提前想好，并且把实现或者优化方法说清楚）<br>系统的量级、pv、uv等<br>应对高并发的解决办法（分布式）<br>在项目中主要负责了哪些工作。<br>nginx的负载均衡<br>分布式缓存的一致性，服务器如何扩容（哈希环）<br>总之要把写在简历上的项目部分熟悉一遍，技术栈、项目功能、难点都要考虑好。</p>
+<p>接口和抽象类区别<br>单继承<br>construct的调用顺序（子类父类之间）<br>设计模式（工厂模式、策略模式、单例模式、装饰模式比较常见）<br>OOP特性，通过哪些机制实现的<br>重写和重载区别<br>静态类静态方法<br>根据某个需求设计一个类（主要考虑类之间的继承关系和属性的权限设置）</p>
+<ul>
+<li><ol>
+<li>static 变量<br>　　静态变量的类型 说明符是static。 静态变量当然是属于静态存储方式，但是属于静态存储方式的量不一定就是静态变量。 例如外部变量虽属于静态 存储方式，但不一定是静态变量，必须由static加以定义后才能成为静态外部变量，或称静态全局变量。<br>　　2. 静态局部变量<br>　　静态局部变量属于静态存储方式，它具有以下特点：<br>　　(1)静态局部变量在函数内定义 它的生存期为整个源程序，但是其作用域仍与自动变量相同，只能在定义该变量的函数内使用该变量。退出该函数后， 尽管该变量还继续存在，但不能使用它。<br>　　(2)允许对构造类静态局部量赋初值 例如数组，若未赋以初值，则由系统自动赋以0值。<br>　　(3)对基本类型的静态局部变量若在说明时未赋以初值，则系统自动赋予0值。而对自动变量不赋初值，则其值是不定的。 根据静态局部变量的特点， 可以 看出它是一种生存期为整个源程序的量。虽然离开定义它的函数后不能使用，但如再次调用定义它的函数时，它又可继续使用， 而且保存了前次被调用后留下的 值。 因此，当多次调用一个函数且要求在调用之间保留某些变量的值时，可考虑采用静态局部变量。虽然用全局变量也可以达到上述目的，但全局变量有时会造成 意外的副作用，因此仍以采用局部静态变量为宜。<br>　　3.静态全局变量<br>全局变量(外部变量)的说明之前再冠以static 就构 成了静态的全局变量。全局变量本身就是静态存储方式， 静态全局变量当然也是静态存储方式。 这两者在存储方式上并无不同。这两者的区别虽在于非静态全局 变量的作用域是整个源程序， 当一个源程序由多个源文件组成时，非静态的全局变量在各个源文件中都是有效的。 而静态全局变量则限制了其作用域， 即只在 定义该变量的源文件内有效， 在同一源程序的其它源文件中不能使用它。由于静态全局变量的作用域局限于一个源文件内，只能为该源文件内的函数公用， 因此 可以避免在其它源文件中引起错误。从以上分析可以看出， 把局部变量改变为静态变量后是改变了它的存储方式即改变了它的生存期。把全局变量改变为静态变量 后是改变了它的作用域， 限制了它的使用范围。因此static 这个说明符在不同的地方所起的作用是不同的。</li>
+</ol>
+</li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/求职面试/" rel="tag"># 求职面试</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/11/10/求职面试/求职面试-数据结构与算法/" rel="next" title="后端开发面试总结-数据结构与算法">
+                <i class="fa fa-chevron-left"></i> 后端开发面试总结-数据结构与算法
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/11/10/求职面试/求职面试-网络/" rel="prev" title="后端开发面试总结-网络">
+                后端开发面试总结-网络 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="qingwei" />
+          <p class="site-author-name" itemprop="name">qingwei</p>
+           
+              <p class="site-description motion-element" itemprop="description">Believe in youself...</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#面向对象编程、C-基础"><span class="nav-number">1.</span> <span class="nav-text">面向对象编程、C++基础</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#网络部分"><span class="nav-number">2.</span> <span class="nav-text">网络部分</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#LINUX基础知识"><span class="nav-number">3.</span> <span class="nav-text">LINUX基础知识</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">qingwei</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+</body>
+</html>
