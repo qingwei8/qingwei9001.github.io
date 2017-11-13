@@ -602,7 +602,13 @@
 <li><p>其他一些常见的工具插件：<a href="http://blog.csdn.net/na_he/article/details/7431367" target="_blank" rel="external">http://blog.csdn.net/na_he/article/details/7431367</a></p>
 </li>
 </ol>
-<p><strong>4. 内存溢出的原因</strong></p>
+<p><strong>4. 如何进行内存检测</strong></p>
+<p>1). windows任务管理器（Task Manager）：是一个很简单的办法来检查一个程序是否有内存泄漏，运行程序，然后在任务管理器里面查看 “内存使用”和”虚拟内存大小”两项，当程序请求了它所需要的内存之后，如果虚拟内存还是持续的增长的话，就说明了这个程序有内存泄漏问题。 当然如果内存泄漏的数目非常的小，用这种方法可能要过很长时间才能看的出来。 </p>
+<p>2).用CompuWare的BoundChecker 之类的工具来检测。其他一些常见的工具插件：<a href="http://blog.csdn.net/na_he/article/details/7431367" target="_blank" rel="external">http://blog.csdn.net/na_he/article/details/7431367</a></p>
+<p>3).Visual C++的Debug版本中的C运行库(C Runtime Library)。它已经提供好些函数来帮助你诊断你的代码和跟踪内存泄漏。 而且最方便的地方是这些函数在Release版本中完全不起任何作用，这样就不会影响你的Release版本程序的运行效率。 </p>
+<p>4).MFC类库中的Debug版本；因为MFC重载了Debug版本的new 和delete操作符， 并且对一些API函数重新进行了包装。在MFC类库中检查内存泄漏的Class就叫CMemoryState，它重新包装了了_CrtMemState，_CrtMemCheckPoint， _CrtMemDfference， _CrtMemDumpAllObjectsSince这些函数。</p>
+<p>可参考：<a href="http://blog.csdn.net/sunnylion1982/article/details/8186801" target="_blank" rel="external">http://blog.csdn.net/sunnylion1982/article/details/8186801</a></p>
+<p><strong>5. 内存溢出的原因</strong></p>
 <p>引起内存溢出的原因有很多种，常见的有以下几种：</p>
 <pre><code>1.内存中加载的数据量过于庞大，如一次从数据库取出过多数据；
 
@@ -613,7 +619,7 @@
 4.使用的第三方软件中的BUG；
 
 5.启动参数内存值设定的过小；
-</code></pre><p><strong>5. 内存溢出的解决办法</strong></p>
+</code></pre><p><strong>6. 内存溢出的解决办法</strong></p>
 <p>内存溢出的解决方案：</p>
 <pre><code>第一步，修改JVM启动参数，直接增加内存。(-Xms，-Xmx参数一定不要忘记加。)
 
