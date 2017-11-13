@@ -597,8 +597,6 @@
 </li>
 <li><p>重载new和delete。其主要思路是将分配的内存以链表的形式自行管理，使用完毕之后从链表中删除，程序结束时可检查修改链表，其中记录了内存泄露的文件，所在文件的行数以及泄露的大小。<br><a href="http://blog.csdn.net/na_he/article/details/7429171" target="_blank" rel="external">http://blog.csdn.net/na_he/article/details/7429171</a></p>
 </li>
-<li><p>其他一些常见的工具插件：<a href="http://blog.csdn.net/na_he/article/details/7431367" target="_blank" rel="external">http://blog.csdn.net/na_he/article/details/7431367</a></p>
-</li>
 </ol>
 <p><strong>4. 如何进行内存检测</strong></p>
 <p>1). windows任务管理器（Task Manager）：是一个很简单的办法来检查一个程序是否有内存泄漏，运行程序，然后在任务管理器里面查看 “内存使用”和”虚拟内存大小”两项，当程序请求了它所需要的内存之后，如果虚拟内存还是持续的增长的话，就说明了这个程序有内存泄漏问题。 当然如果内存泄漏的数目非常的小，用这种方法可能要过很长时间才能看的出来。 </p>
